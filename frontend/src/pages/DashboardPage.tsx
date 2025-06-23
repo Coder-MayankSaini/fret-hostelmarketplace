@@ -145,11 +145,11 @@ const DashboardPage: React.FC = () => {
     }
   };
 
-  // Chart colors using university theme
+  // Chart colors using primary theme
   const chartColors = {
-    primary: 'var(--university-500, #3b82f6)',
-    secondary: 'var(--university-300, #93c5fd)', 
-    accent: 'var(--accent-500, #ef4444)',
+    primary: 'var(--primary-500, #f59e0b)',
+    secondary: 'var(--primary-300, #fcd34d)', 
+    accent: 'var(--accent-500, #f97316)',
     success: '#10b981',
     warning: '#f59e0b'
   };
@@ -166,17 +166,17 @@ const DashboardPage: React.FC = () => {
 
   if (!user?.isSeller) {
     return (
-      <div className="min-h-screen bg-secondary-50 py-12">
+      <div className="min-h-screen bg-primary-50 py-12">
         <div className="max-w-2xl mx-auto px-4">
           <div className="bg-white rounded-2xl shadow-card p-8 text-center">
-            <Package className="w-16 h-16 text-university-400 mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-secondary-900 mb-2">
+            <Package className="w-16 h-16 text-primary-400 mx-auto mb-4" />
+                          <h1 className="text-2xl font-bold text-dark-900 mb-2">
               Seller Dashboard Access Required
             </h1>
-            <p className="text-secondary-600 mb-6">
+                          <p className="text-dark-600 mb-6">
               You need to be a verified seller to access the dashboard.
             </p>
-            <Link to="/become-seller" className="inline-flex items-center px-6 py-3 bg-university-600 text-white font-medium rounded-lg hover:bg-university-700 transition-colors duration-200">
+            <Link to="/become-seller" className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
               Become a Seller
             </Link>
           </div>
@@ -186,7 +186,7 @@ const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+          <div className="min-h-screen bg-primary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
@@ -196,7 +196,7 @@ const DashboardPage: React.FC = () => {
           </div>
           <Link 
             to="/create-item" 
-            className="inline-flex items-center px-4 py-2 bg-university-600 text-white font-medium rounded-lg hover:bg-university-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-university-500 focus:ring-offset-2"
+            className="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
             <Plus className="w-4 h-4 mr-2" />
             Add New Listing
@@ -216,8 +216,8 @@ const DashboardPage: React.FC = () => {
                       {analytics.overview.activeListings} active • {analytics.overview.inactiveListings} inactive
                     </p>
                   </div>
-                  <div className="p-3 bg-university-50 rounded-lg">
-                    <Package className="w-6 h-6 text-university-600" />
+                                  <div className="p-3 bg-primary-50 rounded-lg">
+                  <Package className="w-6 h-6 text-primary-600" />
                   </div>
                 </div>
               </div>
@@ -359,13 +359,13 @@ const DashboardPage: React.FC = () => {
                     placeholder="Search listings..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent w-full sm:w-64"
+                    className="pl-10 pr-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent w-full sm:w-64"
                   />
                 </div>
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
                   <option value="all">All Status</option>
                   <option value="available">Available</option>
@@ -432,7 +432,7 @@ const DashboardPage: React.FC = () => {
 
                     {/* Category */}
                     <div className="flex items-center md:justify-start">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-university-100 text-university-800">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
                         {item.category}
                       </span>
                     </div>
@@ -453,7 +453,7 @@ const DashboardPage: React.FC = () => {
                     <div className="flex items-center space-x-2 md:justify-start">
                       <button
                         onClick={() => handleToggleStatus(item._id)}
-                        className="p-1 text-secondary-400 hover:text-university-600 transition-colors duration-200"
+                        className="p-1 text-secondary-400 hover:text-primary-600 transition-colors duration-200"
                         title={item.isActive ? 'Deactivate' : 'Activate'}
                       >
                         {item.isActive ? (
@@ -464,7 +464,7 @@ const DashboardPage: React.FC = () => {
                       </button>
                       <Link
                         to={`/edit-item/${item._id}`}
-                        className="p-1 text-secondary-400 hover:text-university-600 transition-colors duration-200"
+                        className="p-1 text-secondary-400 hover:text-primary-600 transition-colors duration-200"
                         title="Edit"
                       >
                         <Edit className="w-4 h-4" />

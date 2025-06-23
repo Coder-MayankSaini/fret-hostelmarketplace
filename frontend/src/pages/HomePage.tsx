@@ -57,53 +57,53 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Header */}
+      {/* Simple Header */}
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-5xl font-bold text-dark-900 mb-6">
           Welcome to Fretio
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-dark-600 max-w-3xl mx-auto mb-8">
           Your hostel marketplace for buying and renting items directly from your neighbors
         </p>
-        <div className="mt-4 flex items-center justify-center space-x-4">
-          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-            <Users className="w-4 h-4 mr-1" />
+        <div className="flex items-center justify-center space-x-6 flex-wrap gap-4">
+          <div className="badge badge-primary text-base px-6 py-3">
+            <Users className="w-5 h-5 mr-2" />
             {user?.hostel.name}
           </div>
           {!loading && getSellerStatusBadge()}
         </div>
       </div>
 
-      {/* Become a Seller CTA */}
+      {/* Simple Become a Seller CTA */}
       {!loading && sellerStatus === 'not_applied' && (
-        <div className="card p-6 bg-gradient-to-r from-primary-50 to-secondary-50 border-primary-200">
+        <div className="card p-8 bg-primary-100 border-primary-300">
           <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold text-dark-900 mb-3">
                 Ready to Start Selling?
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-dark-700 mb-6 text-lg">
                 Join our community of sellers and start earning from items you no longer need. 
                 It's quick, easy, and helps your hostel neighbors find what they're looking for!
               </p>
-              <ul className="text-sm text-gray-600 space-y-1 mb-4">
+              <ul className="text-dark-700 space-y-2 mb-6">
                 <li>• Sell or rent items directly to hostel neighbors</li>
                 <li>• Set your own availability hours</li>
                 <li>• Build trust through ratings and reviews</li>
                 <li>• No delivery hassle - buyers collect from your room</li>
               </ul>
+              <Link
+                to="/become-seller"
+                className="btn-primary inline-flex items-center text-lg px-8 py-4"
+              >
+                <Plus className="w-5 h-5 mr-3" />
+                Become a Seller
+              </Link>
             </div>
-            <div className="hidden md:block">
-              <Store className="w-24 h-24 text-primary-400" />
+            <div className="hidden lg:block ml-8">
+              <Store className="w-32 h-32 text-primary-500" />
             </div>
           </div>
-          <Link
-            to="/become-seller"
-            className="btn-primary inline-flex items-center"
-          >
-            <Plus className="w-4 h-4 mr-2" />
-            Become a Seller
-          </Link>
         </div>
       )}
 
@@ -178,15 +178,15 @@ const HomePage: React.FC = () => {
       {/* Discovery Section */}
       <DiscoverySection />
 
-      {/* Quick Actions */}
+      {/* Simple Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Link
           to="/"
-          className="card p-6 hover:shadow-lg transition-shadow group"
+          className="card p-6 hover:shadow-lg transition-shadow duration-200"
         >
-          <Package className="w-8 h-8 text-primary-600 mb-4 group-hover:scale-110 transition-transform" />
-          <h3 className="font-semibold text-gray-900 mb-2">Browse Items</h3>
-          <p className="text-gray-600 text-sm">
+          <Package className="w-8 h-8 text-primary-600 mb-4" />
+          <h3 className="text-lg font-bold text-dark-900 mb-2">Browse Items</h3>
+          <p className="text-dark-600">
             Discover items available for sale or rent in your hostel
           </p>
         </Link>
@@ -194,11 +194,11 @@ const HomePage: React.FC = () => {
         {(user?.isSeller || sellerStatus === 'approved') && (
           <Link
             to="/create-item"
-            className="card p-6 hover:shadow-lg transition-shadow group"
+            className="card p-6 hover:shadow-lg transition-shadow duration-200"
           >
-            <Plus className="w-8 h-8 text-green-600 mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="font-semibold text-gray-900 mb-2">List an Item</h3>
-            <p className="text-gray-600 text-sm">
+            <Plus className="w-8 h-8 text-accent-600 mb-4" />
+            <h3 className="text-lg font-bold text-dark-900 mb-2">List an Item</h3>
+            <p className="text-dark-600">
               Create a new listing to sell or rent your items
             </p>
           </Link>
@@ -206,11 +206,11 @@ const HomePage: React.FC = () => {
 
         <Link
           to="/my-items"
-          className="card p-6 hover:shadow-lg transition-shadow group"
+          className="card p-6 hover:shadow-lg transition-shadow duration-200"
         >
-          <Package className="w-8 h-8 text-blue-600 mb-4 group-hover:scale-110 transition-transform" />
-          <h3 className="font-semibold text-gray-900 mb-2">My Listings</h3>
-          <p className="text-gray-600 text-sm">
+          <Package className="w-8 h-8 text-dark-600 mb-4" />
+          <h3 className="text-lg font-bold text-dark-900 mb-2">My Listings</h3>
+          <p className="text-dark-600">
             Manage your active listings and view transaction history
           </p>
         </Link>
