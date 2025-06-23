@@ -1,0 +1,127 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Configurable University Colors
+        university: {
+          50: 'var(--university-50, #eff6ff)',
+          100: 'var(--university-100, #dbeafe)',
+          200: 'var(--university-200, #bfdbfe)',
+          300: 'var(--university-300, #93c5fd)',
+          400: 'var(--university-400, #60a5fa)',
+          500: 'var(--university-500, #3b82f6)',
+          600: 'var(--university-600, #2563eb)',
+          700: 'var(--university-700, #1d4ed8)',
+          800: 'var(--university-800, #1e40af)',
+          900: 'var(--university-900, #1e3a8a)',
+          950: 'var(--university-950, #172554)',
+        },
+        primary: {
+          50: 'var(--primary-50, #eff6ff)',
+          100: 'var(--primary-100, #dbeafe)',
+          200: 'var(--primary-200, #bfdbfe)',
+          300: 'var(--primary-300, #93c5fd)',
+          400: 'var(--primary-400, #60a5fa)',
+          500: 'var(--primary-500, #3b82f6)',
+          600: 'var(--primary-600, #2563eb)',
+          700: 'var(--primary-700, #1d4ed8)',
+          800: 'var(--primary-800, #1e40af)',
+          900: 'var(--primary-900, #1e3a8a)',
+          950: 'var(--primary-950, #172554)',
+        },
+        secondary: {
+          50: 'var(--secondary-50, #f8fafc)',
+          100: 'var(--secondary-100, #f1f5f9)',
+          200: 'var(--secondary-200, #e2e8f0)',
+          300: 'var(--secondary-300, #cbd5e1)',
+          400: 'var(--secondary-400, #94a3b8)',
+          500: 'var(--secondary-500, #64748b)',
+          600: 'var(--secondary-600, #475569)',
+          700: 'var(--secondary-700, #334155)',
+          800: 'var(--secondary-800, #1e293b)',
+          900: 'var(--secondary-900, #0f172a)',
+          950: 'var(--secondary-950, #020617)',
+        },
+        accent: {
+          50: 'var(--accent-50, #fef2f2)',
+          100: 'var(--accent-100, #fee2e2)',
+          200: 'var(--accent-200, #fecaca)',
+          300: 'var(--accent-300, #fca5a5)',
+          400: 'var(--accent-400, #f87171)',
+          500: 'var(--accent-500, #ef4444)',
+          600: 'var(--accent-600, #dc2626)',
+          700: 'var(--accent-700, #b91c1c)',
+          800: 'var(--accent-800, #991b1b)',
+          900: 'var(--accent-900, #7f1d1d)',
+          950: 'var(--accent-950, #450a0a)',
+        },
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Cal Sans', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+      },
+      borderRadius: {
+        'xl': '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+      },
+      boxShadow: {
+        'university': '0 4px 6px -1px var(--university-500, #3b82f6), 0 2px 4px -1px var(--university-500, #3b82f6)',
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'pulse-soft': 'pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
+        },
+      },
+    },
+    screens: {
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+} 
